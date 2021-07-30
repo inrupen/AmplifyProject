@@ -17,10 +17,12 @@ const FooterLayout = styled.footer`
     display: inline-flex;
     align-items: center;
     margin: 0 1rem;
+    
   }
 
   .footerItem a {
     color: currentColor;
+    text-decoration:none;
   }
 `
 
@@ -28,10 +30,10 @@ export default () => (
     <FooterLayout>
       <ul className="footer">
         <li className="footerItem">
-          <a href="/">Home</a>
+          <a href="/">Footer-Home</a>
         </li>
         <li className="footerItem">
-          <a href="/blog/">Published</a>
+          <a href="/">Copyright@2021</a>
         </li>
       </ul>
     </FooterLayout>

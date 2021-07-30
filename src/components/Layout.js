@@ -52,7 +52,6 @@ class Layout extends Component {
     const { children } = this.props
     return (
       <div id="container">
-        <Navigation id="navigation" />
         {children}
         <Footer id="footer" />
       </div>

@@ -1,32 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+import Layout from './Layout'
 
 const PostLayout = styled.div`
-  .footer {
-    display: flex;
-    justify-content: center;
+margin: 1rem 2rem;
+    padding: 1rem 4rem;
     list-style: none;
-    padding: 0;
-    margin: 0;
-    height: 10vh;
-    max-height: 100px;
-    font-size: 1.25em;
-  }
-
-  .footerItem {
-    display: inline-flex;
-    align-items: center;
-    margin: 0 1rem;
-  }
-
-  .footerItem a {
-    color: currentColor;
-  }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 5vmin;
+    background: #e7e8e8; 
+    border-radius: 8px;
+    box-shadow: -7px 7px 6px -6px #777;
+    z-index: 200;
+  
 `
 
-export default () => (
+const Post = ({ match }) => {
+  console.log(match)
+return(
     <PostLayout>
-  new post
+      <span>Post:  {match.params.id} </span>
     </PostLayout>
   )
-
+}
+  export default Post
