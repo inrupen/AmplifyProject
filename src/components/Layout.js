@@ -1,18 +1,13 @@
 import React, {Component} from 'react'
 import { Router, Route, Link } from 'react-router-dom'
 import Navigation from "./Navigation"
-import Footer from "./Footer"
+// import Footer from "./Footer"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-  * {
-    font-size: 1em;
-    line-height: 1.65;
-    height: 100%;
-    color: #373F49;
-    background: #eee;
-    margin: 0;
-  }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   img {
     display: block;
@@ -31,19 +26,10 @@ const Wrapper = styled.div`
   }
 
   #container{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh
+    flex: 1 0 auto;
   }
-  main{
-    display: flex;
-    flex-grow: 1;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .content{
-    flex-grow: 1;
-    overflow: auto;
+  footer {
+    flex-shrink: 0;
   }
 `
 
@@ -51,10 +37,14 @@ class Layout extends Component {
   render() {
     const { children } = this.props
     return (
-      <div id="container">
-        {children}
-        <Footer id="footer" />
-      </div>
+      <Wrapper>
+        <div id="container">
+          {children}
+        </div>
+        <footer>
+          Footer 
+        </footer>
+      </Wrapper>
     )
   }
 }

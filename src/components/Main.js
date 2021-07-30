@@ -91,9 +91,12 @@ const Wrapper = styled.div`
     border: 1px solid black;
     border-radius: 5px;
   }
-  .closeButton:hover {background: #bbb;}
-
-
+  .closeButton:hover {
+    background: #bbb;
+  }
+  .hidden {
+    display: none;
+  }
   a {
     text-decoration: none;
   }
@@ -155,14 +158,23 @@ const Main = () => {
     if (overlayDiv.style.opacity === '0'){
       overlayDiv.style.opacity = 1;
       overlayDiv.style.zIndex = 299;
+      overlayDiv.classList.remove(".hidden");
     }
     else{
       overlayDiv.style.opacity = 0;
       overlayDiv.style.zIndex = -1;
+      overlayDiv.classList.add(".hidden");
     }
   }
   function toggleUnpublish() {
-    setUnpublishState(true);
+    let overlayDiv = document.querySelector(".overlay");
+    overlayDiv.style.opacity = 0;
+    overlayDiv.style.zIndex = -1;
+    overlayDiv.classList.add(".hidden");
+    if (unpublishState === false)
+      setUnpublishState(true);
+    else
+    setUnpublishState(false);
   }
 
   return (
