@@ -1,9 +1,4 @@
 import React from 'react'
-import {
-  Route,
-  Link,
-  Router
-} from "react-router-dom";
 import styled from 'styled-components'
 import Post from './Post';
 
@@ -25,7 +20,8 @@ export const Wrapper = styled.div`
     float:right;
     position:relative;
     top:-100px;
-    padding: .2rem;
+    padding: .1rem;
+    margin: 0;
     color: black;
     border: 1px solid black;
     border-radius: 5px;

@@ -1,7 +1,4 @@
 import React, {Component} from 'react'
-import { Router, Route, Link } from 'react-router-dom'
-import Navigation from "./Navigation"
-// import Footer from "./Footer"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -42,7 +39,8 @@ class Layout extends Component {
           {children}
         </div>
         <footer>
-          Footer 
+        <span>Footer </span>
+        <span> Copyright@2021</span>
         </footer>
       </Wrapper>
     )
